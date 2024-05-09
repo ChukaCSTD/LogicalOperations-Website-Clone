@@ -22,7 +22,7 @@
     height: 90px;
     background-color: rgba(0, 0, 0, 0.608);
     position: fixed;
-    z-index: 3;
+    z-index: 999;
     top: 0;
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -355,11 +355,14 @@
     background-color: #2b410c;
     height: 800px;
     border-top: 1px solid black;
+    position: relative;
+    z-index: 19;
 }
 
 .green_grid_1 {
     display: grid;
     gap: 1px;
+    width: 100%;
 }
 
 .sector1 {
@@ -367,6 +370,20 @@
     padding-top: 130px;
     text-align: center;
     text-decoration: none;
+    border: .5px solid #6b6b6b;
+    
+    transition: transform 0.5s ease-in-out, background-color 0.5s ease-in-out;
+    transition-duration: .5s, 0.5s;
+    position: relative;
+    z-index: 14;
+    transition-property: transform, z-index;
+    transform-origin: 0 50%;
+    transform-style: preserve-3d;
+}
+.sector1:hover{
+    transform: translateZ(10px) perspective(3000px) rotateY(-40deg);
+    transform-style: preserve-3d;
+    z-index: 14;
 }
 
 .sector1 h1 {
@@ -380,8 +397,21 @@
     background-color: #7fc026;
     padding-top: 130px;
     text-align: center;
-    text-align: center;
     text-decoration: none;
+    border: .5px solid #6b6b6b;
+
+    transition: transform 0.5s ease-in-out, background-color 0.5s ease-in-out;
+    transition-duration: .5s, 0.5s;
+    position: relative;
+    transition-property: transform, z-index;
+    transform-origin: 0 50%;
+    transform-style: preserve-3d;
+    /* z-index: 15; */
+}
+.sector2:hover{
+    transform: translateZ(10px) perspective(3000px) rotateY(-40deg);
+    transform-style: preserve-3d;
+    z-index: 15;
 }
 
 .sector2 b {
@@ -429,6 +459,20 @@
     text-align: center;
     text-decoration: none;
     color: white;
+    border: .5px solid #6b6b6b;
+
+    transition: transform 0.5s ease-in-out, background-color 0.5s ease-in-out;
+    transition-duration: .5s, 0.5s;
+    position: relative;
+    z-index: 14;
+    transition-property: transform, z-index;
+    transform-origin: 100% 50%;
+    transform-style: preserve-3d;
+}
+.sector3:hover{
+    transform: translateZ(10px) perspective(3000px) rotateY(40deg);
+    transform-style: preserve-3d;
+    z-index: 14;
 }
 
 .sector4 {
@@ -436,6 +480,20 @@
     padding-top: 140px;
     text-align: center;
     text-decoration: none;
+    border: .5px solid #6b6b6b;
+
+    transition: transform 0.5s ease-in-out, background-color 0.5s ease-in-out;
+    transition-duration: .5s, 0.5s;
+    position: relative;
+    transition-property: transform, z-index;
+    transform-origin: 100% 50%;
+    transform-style: preserve-3d;
+    /* z-index: 15; */
+}
+.sector4:hover{
+    transform: translateZ(10px) perspective(3000px) rotateY(40deg);
+    transform-style: preserve-3d;
+    z-index: 15;
 }
 
 .sector4 b{
@@ -454,6 +512,8 @@
     grid-template-columns: 1fr 1fr;
     gap: 1px;
     background-color: black;
+    position: relative;
+    z-index: 10;
 }
 
 .section4 a {
@@ -559,8 +619,8 @@
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 1px;
-    height: 700px;
-    background-color: black;
+    height: 650px;
+    background-color: #04678f;
 }
 
 .lead_to{
@@ -577,21 +637,52 @@
 .brands .partner1 {
     background-color: #009ddc;
     padding-top: 150px;
+    transition: transform 1s; 
+    overflow: hidden;
+}
+.brands .partner1:hover {
+    transform: translateX(-30px) translateY(-30px);
 }
 
 .brands .partner2 {
     background-color: #009ddc;
     padding-top: 130px;
+    transition: transform 1s; 
+    overflow: hidden;
+}
+.brands .partner2:hover {
+    transform: translateX(30px) translateY(-30px);
 }
 
 .brands .partner3 {
     background-color: #009ddc;
     padding-top: 130px;
+    transition: transform 1s; 
+    overflow: hidden;
+}
+.brands .partner3:hover {
+    transform: translateX(-30px) translateY(30px);
 }
 
 .brands .partner4 {
     background-color: #009ddc;
     padding-top: 110px;
+    transition: transform 1s; 
+    overflow: hidden;
+}
+.brands .partner4:hover {
+    transform: translateX(30px) translateY(30px);
+}
+
+.partner5 {
+    background-color: #009ddc;
+    padding-left: 60px;
+    padding-top: 200px;
+    text-decoration: none;
+    font-size: 35px;
+    color: white;
+    position: relative;
+    z-index: 980;
 }
 
 .brands a {
@@ -600,11 +691,12 @@
 
 .partner2 {
     background-color: #009ddc;
-    padding-left: 60px;
+    padding-left: 10px;
     padding-top: 300px;
     text-decoration: none;
     font-size: 35px;
     color: white;
+
 }
 
 .partner2 h3 {
@@ -628,6 +720,8 @@
     grid-template-columns: 2.1fr 1fr;
     gap: 1px;
     background-color: #ca9400;
+    position: relative;
+    z-index: 10;
 }
 
 .section6 .yans {
@@ -1075,10 +1169,6 @@
     .sector4 img {
        max-width: 100%;
        height: auto;
-    }
-  
-    .green_grid_1 {
-      width: 100%;
     }
   
     .green_grid_2 {
